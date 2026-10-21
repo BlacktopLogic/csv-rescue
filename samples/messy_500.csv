@@ -1,0 +1,501 @@
+﻿Customer,Amount,Date,Reference,Notes
+  Alice Johnson  ,12.50,10/01/2026,INV-00001,standard
+Bob Smith,$25.77,2026-10-02,INV-00002,"rush, call ahead"
+Carol Chen,$39.04,2026/10/03,INV-00003,café delivery
+"Nguyen, Kim",5426.66,10/17/2026,INV-00409,"""fragile"" item"
+José García,52.31,10/04/2026,INV-00004,"""fragile"" item"
+Zoë Martin,$65.58,2026-10-05,INV-00005,follow-up needed
+François Dupont,$78.85,2026/10/06,INV-00006,standard
+Maya Patel,92.12,10/07/2026,INV-00007,"rush, call ahead"
+"  O’Connor, Riley  ",$105.39,2026-10-08,INV-00008,café delivery
+"Nguyen, Kim",$118.66,2026/10/09,INV-00009,"""fragile"" item"
+Taylor Reed,131.93,10/10/2026,INV-00010,follow-up needed
+Alice Johnson,$145.20,2026-10-11,INV-00011,standard
+Bob Smith,$158.47,2026/10/12,INV-00012,"rush, call ahead"
+Carol Chen,171.74,10/13/2026,INV-00013,café delivery
+José García,$185.01,2026-10-14,INV-00014,"""fragile"" item"
+  Zoë Martin  ,$198.28,2026/10/15,INV-00015,follow-up needed
+François Dupont,211.55,10/16/2026,INV-00016,standard
+Maya Patel,$224.82,2026-10-17,INV-00017,"rush, call ahead"
+"O’Connor, Riley",$238.09,2026/10/18,INV-00018,café delivery
+"Nguyen, Kim",251.36,10/19/2026,INV-00019,"""fragile"" item"
+Taylor Reed,$264.63,2026-10-20,INV-00020,follow-up needed
+Alice Johnson,$277.90,2026/10/21,INV-00021,standard
+  Bob Smith  ,291.17,10/22/2026,INV-00022,"rush, call ahead"
+Carol Chen,$304.44,2026-10-23,INV-00023,café delivery
+José García,$317.71,2026/10/24,INV-00024,"""fragile"" item"
+Zoë Martin,330.98,10/25/2026,INV-00025,follow-up needed
+François Dupont,unknown,2026-10-26,INV-00026,standard
+Maya Patel,$357.52,2026/10/27,INV-00027,"rush, call ahead"
+"O’Connor, Riley",370.79,10/28/2026,INV-00028,café delivery
+"  Nguyen, Kim  ",TBD,2026-10-01,INV-00029,"""fragile"" item"
+Taylor Reed,$397.33,2026/10/02,INV-00030,follow-up needed
+Alice Johnson,410.60,10/03/2026,INV-00031,standard
+Bob Smith,unknown,2026-10-04,INV-00032,"rush, call ahead"
+Carol Chen,$437.14,2026/10/05,INV-00033,café delivery
+José García,450.41,10/06/2026,INV-00034,"""fragile"" item"
+Zoë Martin,TBD,2026-10-07,INV-00035,follow-up needed
+  François Dupont  ,$476.95,2026/10/08,INV-00036,standard
+Maya Patel,490.22,10/09/2026,INV-00037,"rush, call ahead"
+"O’Connor, Riley",unknown,2026-10-10,INV-00038,café delivery
+"Nguyen, Kim",$516.76,2026/10/11,INV-00039,"""fragile"" item"
+Taylor Reed,530.03,10/12/2026,INV-00040,follow-up needed
+Alice Johnson,TBD,2026-10-13,INV-00041,standard
+Bob Smith,$556.57,2026/10/14,INV-00042,"rush, call ahead"
+  Carol Chen  ,569.84,10/15/2026,INV-00043,café delivery
+José García,unknown,2026-10-16,INV-00044,"""fragile"" item"
+Zoë Martin,$596.38,2026/10/17,INV-00045,follow-up needed
+François Dupont,609.65,10/18/2026,INV-00046,standard
+Maya Patel,TBD,2026-10-19,INV-00047,"rush, call ahead"
+"O’Connor, Riley",$636.19,2026/10/20,INV-00048,café delivery
+"Nguyen, Kim",649.46,10/21/2026,INV-00049,"""fragile"" item"
+  Taylor Reed  ,unknown,2026-10-22,INV-00050,follow-up needed
+Alice Johnson,$676.00,2026/10/23,INV-00051,standard
+Bob Smith,689.27,10/24/2026,INV-00052,"rush, call ahead"
+Carol Chen,TBD,2026-10-25,INV-00053,café delivery
+José García,$715.81,2026/10/26,INV-00054,"""fragile"" item"
+Zoë Martin,729.08,10/27/2026,INV-00055,follow-up needed
+François Dupont,unknown,2026-10-28,INV-00056,standard
+  Maya Patel  ,$755.62,2026/10/01,INV-00057,"rush, call ahead"
+"O’Connor, Riley",768.89,10/02/2026,INV-00058,café delivery
+"Nguyen, Kim",TBD,2026-10-03,INV-00059,"""fragile"" item"
+Taylor Reed,$795.43,2026/10/04,INV-00060,follow-up needed
+Alice Johnson,808.70,10/05/2026,INV-00061,standard
+Bob Smith,unknown,2026-10-06,INV-00062,"rush, call ahead"
+Carol Chen,$835.24,2026/10/07,INV-00063,café delivery
+  José García  ,848.51,10/08/2026,INV-00064,"""fragile"" item"
+Zoë Martin,TBD,2026-10-09,INV-00065,follow-up needed
+François Dupont,$875.05,2026/10/10,INV-00066,standard
+Maya Patel,888.32,10/11/2026,INV-00067,"rush, call ahead"
+"O’Connor, Riley",unknown,2026-10-12,INV-00068,café delivery
+"Nguyen, Kim",$914.86,2026/10/13,INV-00069,"""fragile"" item"
+Taylor Reed,928.13,10/14/2026,INV-00070,follow-up needed
+  Alice Johnson  ,TBD,2026-10-15,INV-00071,standard
+Bob Smith,$954.67,2026/10/16,INV-00072,"rush, call ahead"
+Carol Chen,967.94,10/17/2026,INV-00073,café delivery
+José García,unknown,2026-10-18,INV-00074,"""fragile"" item"
+Zoë Martin,$994.48,2026/10/19,INV-00075,follow-up needed
+François Dupont,1007.75,10/20/2026,INV-00076,standard
+Maya Patel,TBD,2026-10-21,INV-00077,"rush, call ahead"
+"  O’Connor, Riley  ","$1,034.29",2026/10/22,INV-00078,café delivery
+"Nguyen, Kim",1047.56,10/23/2026,INV-00079,"""fragile"" item"
+Taylor Reed,unknown,2026-10-24,INV-00080,follow-up needed
+Alice Johnson,"$1,074.10",2026/10/25,INV-00081,standard
+Bob Smith,1087.37,10/26/2026,INV-00082,"rush, call ahead"
+Carol Chen,TBD,2026-10-27,INV-00083,café delivery
+José García,"$1,113.91",2026/10/28,INV-00084,"""fragile"" item"
+  Zoë Martin  ,1127.18,10/01/2026,INV-00085,follow-up needed
+François Dupont,"$1,140.45",2026-10-02,INV-00086,standard
+Maya Patel,"$1,153.72",2026/10/03,INV-00087,"rush, call ahead"
+"O’Connor, Riley",1166.99,10/04/2026,INV-00088,café delivery
+"Nguyen, Kim","$1,180.26",2026-10-05,INV-00089,"""fragile"" item"
+Taylor Reed,"$1,193.53",2026/10/06,INV-00090,follow-up needed
+Alice Johnson,1206.80,10/07/2026,INV-00091,standard
+  Bob Smith  ,"$1,220.07",2026-10-08,INV-00092,"rush, call ahead"
+Carol Chen,"$1,233.34",2026/10/09,INV-00093,café delivery
+José García,1246.61,10/10/2026,INV-00094,"""fragile"" item"
+Zoë Martin,"$1,259.88",2026-10-11,INV-00095,follow-up needed
+François Dupont,"$1,273.15",2026/10/12,INV-00096,standard
+Maya Patel,1286.42,10/13/2026,INV-00097,"rush, call ahead"
+"O’Connor, Riley","$1,299.69",2026-10-14,INV-00098,café delivery
+"  Nguyen, Kim  ","$1,312.96",2026/10/15,INV-00099,"""fragile"" item"
+Taylor Reed,1326.23,10/16/2026,INV-00100,follow-up needed
+Alice Johnson,"$1,339.50",2026-10-17,INV-00101,standard
+Bob Smith,"$1,352.77",2026/10/18,INV-00102,"rush, call ahead"
+Carol Chen,1366.04,10/19/2026,INV-00103,café delivery
+José García,"$1,379.31",2026-10-20,INV-00104,"""fragile"" item"
+Zoë Martin,"$1,392.58",2026/10/21,INV-00105,follow-up needed
+  François Dupont  ,1405.85,10/22/2026,INV-00106,standard
+Maya Patel,"$1,419.12",2026-10-23,INV-00107,"rush, call ahead"
+"O’Connor, Riley","$1,432.39",2026/10/24,INV-00108,café delivery
+"Nguyen, Kim",1445.66,10/25/2026,INV-00109,"""fragile"" item"
+Taylor Reed,"$1,458.93",2026-10-26,INV-00110,follow-up needed
+Alice Johnson,"$1,472.20",not a date,INV-00111,standard
+Bob Smith,1485.47,10/28/2026,INV-00112,"rush, call ahead"
+  Carol Chen  ,"$1,498.74",2026-10-01,INV-00113,café delivery
+José García,"$1,512.01",2026/10/02,INV-00114,"""fragile"" item"
+Zoë Martin,1525.28,2026-13-45,INV-00115,follow-up needed
+François Dupont,"$1,538.55",2026-10-04,INV-00116,standard
+Maya Patel,"$1,551.82",2026/10/05,INV-00117,"rush, call ahead"
+"O’Connor, Riley",1565.09,10/06/2026,INV-00118,café delivery
+"Nguyen, Kim","$1,578.36",not a date,INV-00119,"""fragile"" item"
+  Taylor Reed  ,"$1,591.63",2026/10/08,INV-00120,follow-up needed
+Alice Johnson,1604.90,10/09/2026,INV-00121,standard
+Bob Smith,"$1,618.17",2026-10-10,INV-00122,"rush, call ahead"
+Carol Chen,"$1,631.44",2026-13-45,INV-00123,café delivery
+José García,1644.71,10/12/2026,INV-00124,"""fragile"" item"
+Zoë Martin,"$1,657.98",2026-10-13,INV-00125,follow-up needed
+François Dupont,"$1,671.25",2026/10/14,INV-00126,standard
+  Maya Patel  ,1684.52,not a date,INV-00127,"rush, call ahead"
+"O’Connor, Riley","$1,697.79",2026-10-16,INV-00128,café delivery
+"Nguyen, Kim","$1,711.06",2026/10/17,INV-00129,"""fragile"" item"
+Taylor Reed,1724.33,10/18/2026,INV-00130,follow-up needed
+Alice Johnson,"$1,737.60",2026-13-45,INV-00131,standard
+Bob Smith,"$1,750.87",2026/10/20,INV-00132,"rush, call ahead"
+Carol Chen,1764.14,10/21/2026,INV-00133,café delivery
+  José García  ,"$1,777.41",2026-10-22,INV-00134,"""fragile"" item"
+Zoë Martin,"$1,790.68",not a date,INV-00135,follow-up needed
+François Dupont,1803.95,10/24/2026,INV-00136,standard
+Maya Patel,"$1,817.22",2026-10-25,INV-00137,"rush, call ahead"
+"O’Connor, Riley","$1,830.49",2026/10/26,INV-00138,café delivery
+"Nguyen, Kim",1843.76,2026-13-45,INV-00139,"""fragile"" item"
+Taylor Reed,"$1,857.03",2026-10-28,INV-00140,follow-up needed
+  Alice Johnson  ,"$1,870.30",2026/10/01,INV-00141,standard
+Bob Smith,1883.57,10/02/2026,INV-00142,"rush, call ahead"
+Carol Chen,"$1,896.84",not a date,INV-00143,café delivery
+José García,"$1,910.11",2026/10/04,INV-00144,"""fragile"" item"
+Zoë Martin,1923.38,10/05/2026,INV-00145,follow-up needed
+François Dupont,"$1,936.65",2026-10-06,INV-00146,standard
+Maya Patel,"$1,949.92",2026-13-45,INV-00147,"rush, call ahead"
+"  O’Connor, Riley  ",1963.19,10/08/2026,INV-00148,café delivery
+"Nguyen, Kim","$1,976.46",2026-10-09,INV-00149,"""fragile"" item"
+Taylor Reed,"$1,989.73",2026/10/10,INV-00150,follow-up needed
+Alice Johnson,2003.00,not a date,INV-00151,standard
+Bob Smith,"$2,016.27",2026-10-12,INV-00152,"rush, call ahead"
+Carol Chen,"$2,029.54",2026/10/13,INV-00153,café delivery
+José García,2042.81,10/14/2026,INV-00154,"""fragile"" item"
+  Zoë Martin  ,"$2,056.08",2026-13-45,INV-00155,follow-up needed
+François Dupont,"$2,069.35",2026/10/16,INV-00156,standard
+Maya Patel,2082.62,10/17/2026,INV-00157,"rush, call ahead"
+"O’Connor, Riley","$2,095.89",2026-10-18,INV-00158,café delivery
+"Nguyen, Kim","$2,109.16",not a date,INV-00159,"""fragile"" item"
+Taylor Reed,2122.43,10/20/2026,INV-00160,follow-up needed
+Alice Johnson,"$2,135.70",2026-10-21,INV-00161,standard
+  Bob Smith  ,"$2,148.97",2026/10/22,INV-00162,"rush, call ahead"
+Carol Chen,2162.24,2026-13-45,INV-00163,café delivery
+José García,"$2,175.51",2026-10-24,INV-00164,"""fragile"" item"
+Zoë Martin,"$2,188.78",2026/10/25,INV-00165,follow-up needed
+François Dupont,2202.05,10/26/2026,INV-00166,standard
+Maya Patel,"$2,215.32",not a date,INV-00167,"rush, call ahead"
+"O’Connor, Riley","$2,228.59",2026/10/28,INV-00168,café delivery
+"  Nguyen, Kim  ",2241.86,10/01/2026,INV-00169,"""fragile"" item"
+Taylor Reed,"$2,255.13",2026-10-02,INV-00170,follow-up needed
+Alice Johnson,"$2,268.40",2026/10/03,INV-00171,standard
+Bob Smith,2281.67,10/04/2026,INV-00172,"rush, call ahead"
+Carol Chen,"$2,294.94",2026-10-05,INV-00173,café delivery
+José García,"$2,308.21",2026/10/06,INV-00174,"""fragile"" item"
+Zoë Martin,2321.48,10/07/2026,INV-00175,follow-up needed
+  François Dupont  ,"$2,334.75",2026-10-08,INV-00176,standard
+Maya Patel,"$2,348.02",2026/10/09,INV-00177,"rush, call ahead"
+"O’Connor, Riley",2361.29,10/10/2026,INV-00178,café delivery
+"Nguyen, Kim","$2,374.56",2026-10-11,INV-00179,"""fragile"" item"
+Taylor Reed,"$2,387.83",2026/10/12,INV-00180,follow-up needed
+Alice Johnson,2401.10,10/13/2026,INV-00181,standard
+Bob Smith,"$2,414.37",2026-10-14,INV-00182,"rush, call ahead"
+  Carol Chen  ,"$2,427.64",2026/10/15,INV-00183,café delivery
+José García,2440.91,10/16/2026,INV-00184,"""fragile"" item"
+Zoë Martin,"$2,454.18",2026-10-17,INV-00185,follow-up needed
+François Dupont,"$2,467.45",2026/10/18,INV-00186,standard
+Maya Patel,2480.72,10/19/2026,INV-00187,"rush, call ahead"
+"O’Connor, Riley","$2,493.99",2026-10-20,INV-00188,café delivery
+"Nguyen, Kim","$2,507.26",2026/10/21,INV-00189,"""fragile"" item"
+  Taylor Reed  ,2520.53,10/22/2026,INV-00190,follow-up needed
+Alice Johnson,"$2,533.80",2026-10-23,INV-00191,standard
+Bob Smith,"$2,547.07",2026/10/24,INV-00192,"rush, call ahead"
+Carol Chen,2560.34,10/25/2026,INV-00193,café delivery
+José García,"$2,573.61",2026-10-26,INV-00194,"""fragile"" item"
+Zoë Martin,"$2,586.88",2026/10/27,INV-00195,follow-up needed
+François Dupont,2600.15,10/28/2026,INV-00196,standard
+  Maya Patel  ,"$2,613.42",2026-10-01,INV-00197,"rush, call ahead"
+"O’Connor, Riley","$2,626.69",2026/10/02,INV-00198,café delivery
+"Nguyen, Kim",2639.96,10/03/2026,INV-00199,"""fragile"" item"
+Taylor Reed,"$2,653.23",2026-10-04,INV-00200,follow-up needed
+Alice Johnson,"$2,666.50",2026/10/05,INV-00201,N/A
+Bob Smith,2679.77,10/06/2026,INV-00202,"rush, call ahead"
+Carol Chen,"$2,693.04",2026-10-07,INV-00203,café delivery
+  José García  ,"$2,706.31",2026/10/08,INV-00204,null
+Zoë Martin,2719.58,10/09/2026,INV-00205,follow-up needed
+François Dupont,"$2,732.85",2026-10-10,INV-00206,standard
+Maya Patel,"$2,746.12",2026/10/11,INV-00207,-
+"O’Connor, Riley",2759.39,10/12/2026,INV-00208,café delivery
+"Nguyen, Kim","$2,772.66",2026-10-13,INV-00209,"""fragile"" item"
+Taylor Reed,"$2,785.93",2026/10/14,INV-00210,N/A
+  Alice Johnson  ,2799.20,10/15/2026,INV-00211,standard
+Bob Smith,"$2,812.47",2026-10-16,INV-00212,"rush, call ahead"
+Carol Chen,"$2,825.74",2026/10/17,INV-00213,null
+José García,2839.01,10/18/2026,INV-00214,"""fragile"" item"
+Zoë Martin,"$2,852.28",2026-10-19,INV-00215,follow-up needed
+François Dupont,"$2,865.55",2026/10/20,INV-00216,-
+Maya Patel,2878.82,10/21/2026,INV-00217,"rush, call ahead"
+"  O’Connor, Riley  ","$2,892.09",2026-10-22,INV-00218,café delivery
+"Nguyen, Kim","$2,905.36",2026/10/23,INV-00219,N/A
+Taylor Reed,2918.63,10/24/2026,INV-00220,follow-up needed
+Alice Johnson,"$2,931.90",2026-10-25,INV-00221,standard
+Bob Smith,"$2,945.17",2026/10/26,INV-00222,null
+Carol Chen,2958.44,10/27/2026,INV-00223,café delivery
+José García,"$2,971.71",2026-10-28,INV-00224,"""fragile"" item"
+  Zoë Martin  ,"$2,984.98",2026/10/01,INV-00225,-
+François Dupont,2998.25,10/02/2026,INV-00226,standard
+Maya Patel,"$3,011.52",2026-10-03,INV-00227,"rush, call ahead"
+"O’Connor, Riley","$3,024.79",2026/10/04,INV-00228,N/A
+"Nguyen, Kim",3038.06,10/05/2026,INV-00229,"""fragile"" item"
+Taylor Reed,"$3,051.33",2026-10-06,INV-00230,follow-up needed
+Alice Johnson,"$3,064.60",2026/10/07,INV-00231,null
+  Bob Smith  ,3077.87,10/08/2026,INV-00232,"rush, call ahead"
+Carol Chen,"$3,091.14",2026-10-09,INV-00233,café delivery
+José García,"$3,104.41",2026/10/10,INV-00234,-
+Zoë Martin,3117.68,10/11/2026,INV-00235,follow-up needed
+François Dupont,"$3,130.95",2026-10-12,INV-00236,standard
+Maya Patel,"$3,144.22",2026/10/13,INV-00237,N/A
+"O’Connor, Riley",3157.49,10/14/2026,INV-00238,café delivery
+"  Nguyen, Kim  ","$3,170.76",2026-10-15,INV-00239,"""fragile"" item"
+Taylor Reed,"$3,184.03",2026/10/16,INV-00240,null
+Alice Johnson,3197.30,10/17/2026,INV-00241,standard
+Bob Smith,"$3,210.57",2026-10-18,INV-00242,"rush, call ahead"
+Carol Chen,"$3,223.84",2026/10/19,INV-00243,-
+José García,3237.11,10/20/2026,INV-00244,"""fragile"" item"
+Zoë Martin,"$3,250.38",2026-10-21,INV-00245,follow-up needed
+  François Dupont  ,"$3,263.65",2026/10/22,INV-00246,N/A
+Maya Patel,3276.92,10/23/2026,INV-00247,"rush, call ahead"
+"O’Connor, Riley","$3,290.19",2026-10-24,INV-00248,café delivery
+"Nguyen, Kim","$3,303.46",2026/10/25,INV-00249,null
+Taylor Reed,3316.73,10/26/2026,INV-00250,follow-up needed
+Alice Johnson,"$3,330.00",2026-10-27,INV-00251,standard
+Bob Smith,"$3,343.27",2026/10/28,INV-00252,-
+  Carol Chen  ,3356.54,10/01/2026,INV-00253,café delivery
+José García,"$3,369.81",2026-10-02,INV-00254,"""fragile"" item"
+Zoë Martin,"$3,383.08",2026/10/03,INV-00255,N/A
+François Dupont,3396.35,10/04/2026,INV-00256,standard
+Maya Patel,"$3,409.62",2026-10-05,INV-00257,"rush, call ahead"
+"O’Connor, Riley","$3,422.89",2026/10/06,INV-00258,null
+"Nguyen, Kim",3436.16,10/07/2026,INV-00259,"""fragile"" item"
+  Taylor Reed  ,"$3,449.43",2026-10-08,INV-00260,follow-up needed
+Alice Johnson,"$3,462.70",2026/10/09,INV-00261,-
+Bob Smith,3475.97,10/10/2026,INV-00262,"rush, call ahead"
+Carol Chen,"$3,489.24",2026-10-11,INV-00263,café delivery
+José García,"$3,502.51",2026/10/12,INV-00264,N/A
+Zoë Martin,3515.78,10/13/2026,INV-00265,follow-up needed
+François Dupont,"$3,529.05",2026-10-14,INV-00266,standard
+  Maya Patel  ,"$3,542.32",2026/10/15,INV-00267,null
+"O’Connor, Riley",3555.59,10/16/2026,INV-00268,café delivery
+"Nguyen, Kim","$3,568.86",2026-10-17,INV-00269,"""fragile"" item"
+Taylor Reed,"$3,582.13",2026/10/18,INV-00270,-
+Alice Johnson,3595.40,10/19/2026,INV-00271,standard
+Bob Smith,"$3,608.67",2026-10-20,INV-00272,"rush, call ahead"
+Carol Chen,"$3,621.94",2026/10/21,INV-00273,N/A
+  José García  ,3635.21,10/22/2026,INV-00274,"""fragile"" item"
+Zoë Martin,"$3,648.48",2026-10-23,INV-00275,follow-up needed
+François Dupont,"$3,661.75",2026/10/24,INV-00276,null
+Maya Patel,3675.02,10/25/2026,INV-00277,"rush, call ahead"
+"O’Connor, Riley","$3,688.29",2026-10-26,INV-00278,café delivery
+"Nguyen, Kim","$3,701.56",2026/10/27,INV-00279,-
+Taylor Reed,3714.83,10/28/2026,INV-00280,follow-up needed
+  Alice Johnson  ,"$3,728.10",2026-10-01,INV-00281,standard
+Bob Smith,"$3,741.37",2026/10/02,INV-00282,N/A
+Carol Chen,3754.64,10/03/2026,INV-00283,café delivery
+José García,"$3,767.91",2026-10-04,INV-00284,"""fragile"" item"
+Zoë Martin,"$3,781.18",2026/10/05,INV-00285,null
+François Dupont,3794.45,10/06/2026,INV-00286,standard
+Maya Patel,"$3,807.72",2026-10-07,INV-00287,"rush, call ahead"
+"  O’Connor, Riley  ","$3,820.99",2026/10/08,INV-00288,-
+"Nguyen, Kim",3834.26,10/09/2026,INV-00289,"""fragile"" item"
+Taylor Reed,"$3,847.53",2026-10-10,INV-00290,follow-up needed
+Alice Johnson,"$3,860.80",2026/10/11,INV-00291,standard
+Bob Smith,3874.07,10/12/2026,INV-00292,"rush, call ahead"
+Carol Chen,"$3,887.34",2026-10-13,INV-00293,café delivery
+José García,"$3,900.61",2026/10/14,INV-00294,"""fragile"" item"
+  Zoë Martin  ,3913.88,10/15/2026,INV-00295,follow-up needed
+François Dupont,"$3,927.15",2026-10-16,INV-00296,standard
+Maya Patel,"$3,940.42",2026/10/17,INV-00297,"rush, call ahead"
+"O’Connor, Riley",3953.69,10/18/2026,INV-00298,café delivery
+"Nguyen, Kim","$3,966.96",2026-10-19,INV-00299,"""fragile"" item"
+Taylor Reed,"$3,980.23",2026/10/20,INV-00300,follow-up needed
+Alice Johnson,3993.50,10/21/2026,INV-00301,standard
+  Bob Smith  ,"$4,006.77",2026-10-22,INV-00302,"rush, call ahead"
+Carol Chen,"$4,020.04",2026/10/23,INV-00303,café delivery
+José García,4033.31,10/24/2026,INV-00304,"""fragile"" item"
+Zoë Martin,"$4,046.58",2026-10-25,INV-00305,follow-up needed
+François Dupont,"$4,059.85",2026/10/26,INV-00306,standard
+Maya Patel,4073.12,10/27/2026,INV-00307,"rush, call ahead"
+"O’Connor, Riley","$4,086.39",2026-10-28,INV-00308,café delivery
+"  Nguyen, Kim  ","$4,099.66",2026/10/01,INV-00309,"""fragile"" item"
+Taylor Reed,4112.93,10/02/2026,INV-00310,follow-up needed
+Alice Johnson,"$4,126.20",2026-10-03,INV-00311,standard
+Bob Smith,"$4,139.47",2026/10/04,INV-00312,"rush, call ahead"
+Carol Chen,4152.74,10/05/2026,INV-00313,café delivery
+José García,"$4,166.01",2026-10-06,INV-00314,"""fragile"" item"
+Zoë Martin,"$4,179.28",2026/10/07,INV-00315,follow-up needed
+  François Dupont  ,4192.55,10/08/2026,INV-00316,standard
+Maya Patel,"$4,205.82",2026-10-09,INV-00317,"rush, call ahead"
+"O’Connor, Riley","$4,219.09",2026/10/10,INV-00318,café delivery
+"Nguyen, Kim",4232.36,10/11/2026,INV-00319,"""fragile"" item"
+Taylor Reed,"$4,245.63",2026-10-12,INV-00320,follow-up needed
+Alice Johnson,"$4,258.90",2026/10/13,INV-00321,standard
+Bob Smith,4272.17,10/14/2026,INV-00322,"rush, call ahead"
+  Carol Chen  ,"$4,285.44",2026-10-15,INV-00323,café delivery
+José García,"$4,298.71",2026/10/16,INV-00324,"""fragile"" item"
+Zoë Martin,4311.98,10/17/2026,INV-00325,follow-up needed
+François Dupont,"$4,325.25",2026-10-18,INV-00326,standard
+Maya Patel,"$4,338.52",2026/10/19,INV-00327,"rush, call ahead"
+"O’Connor, Riley",4351.79,10/20/2026,INV-00328,café delivery
+"Nguyen, Kim","$4,365.06",2026-10-21,INV-00329,"""fragile"" item"
+  Taylor Reed  ,"$4,378.33",2026/10/22,INV-00330,follow-up needed
+Alice Johnson,4391.60,10/23/2026,INV-00331,standard
+Bob Smith,"$4,404.87",2026-10-24,INV-00332,"rush, call ahead"
+Carol Chen,"$4,418.14",2026/10/25,INV-00333,café delivery
+José García,4431.41,10/26/2026,INV-00334,"""fragile"" item"
+Zoë Martin,"$4,444.68",2026-10-27,INV-00335,follow-up needed
+François Dupont,"$4,457.95",2026/10/28,INV-00336,standard
+  Maya Patel  ,4471.22,10/01/2026,INV-00337,"rush, call ahead"
+"O’Connor, Riley","$4,484.49",2026-10-02,INV-00338,café delivery
+"Nguyen, Kim","$4,497.76",2026/10/03,INV-00339,"""fragile"" item"
+Taylor Reed,4511.03,10/04/2026,INV-00340,follow-up needed
+Alice Johnson,"$4,524.30",2026-10-05,INV-00341,standard
+Bob Smith,"$4,537.57",2026/10/06,INV-00342,"rush, call ahead"
+Carol Chen,4550.84,10/07/2026,INV-00343,café delivery
+  José García  ,"$4,564.11",2026-10-08,INV-00344,"""fragile"" item"
+Zoë Martin,"$4,577.38",2026/10/09,INV-00345,follow-up needed
+François Dupont,4590.65,10/10/2026,INV-00346,standard
+Maya Patel,"$4,603.92",2026-10-11,INV-00347,"rush, call ahead"
+"O’Connor, Riley","$4,617.19",2026/10/12,INV-00348,café delivery
+"Nguyen, Kim",4630.46,10/13/2026,INV-00349,"""fragile"" item"
+Taylor Reed,"$4,643.73",2026-10-14,INV-00350,follow-up needed
+  Alice Johnson  ,"$4,657.00",2026/10/15,INV-00351,standard
+Bob Smith,4670.27,10/16/2026,INV-00352,"rush, call ahead"
+Carol Chen,"$4,683.54",2026-10-17,INV-00353,café delivery
+José García,"$4,696.81",2026/10/18,INV-00354,"""fragile"" item"
+Zoë Martin,4710.08,10/19/2026,INV-00355,follow-up needed
+François Dupont,"$4,723.35",2026-10-20,INV-00356,standard
+Maya Patel,"$4,736.62",2026/10/21,INV-00357,"rush, call ahead"
+"  O’Connor, Riley  ",4749.89,10/22/2026,INV-00358,café delivery
+"Nguyen, Kim","$4,763.16",2026-10-23,INV-00359,"""fragile"" item"
+Taylor Reed,"$4,776.43",2026/10/24,INV-00360,follow-up needed
+Alice Johnson,4789.70,10/25/2026,INV-00361,standard
+Bob Smith,"$4,802.97",2026-10-26,INV-00362,"rush, call ahead"
+Carol Chen,"$4,816.24",2026/10/27,INV-00363,café delivery
+José García,4829.51,10/28/2026,INV-00364,"""fragile"" item"
+  Zoë Martin  ,"$4,842.78",2026-10-01,INV-00365,follow-up needed
+François Dupont,"$4,856.05",2026/10/02,INV-00366,standard
+Maya Patel,4869.32,10/03/2026,INV-00367,"rush, call ahead"
+"O’Connor, Riley","$4,882.59",2026-10-04,INV-00368,café delivery
+"Nguyen, Kim","$4,895.86",2026/10/05,INV-00369,"""fragile"" item"
+Taylor Reed,4909.13,10/06/2026,INV-00370,follow-up needed
+Alice Johnson,"$4,922.40",2026-10-07,INV-00371,standard
+  Bob Smith  ,"$4,935.67",2026/10/08,INV-00372,"rush, call ahead"
+Carol Chen,4948.94,10/09/2026,INV-00373,café delivery
+José García,"$4,962.21",2026-10-10,INV-00374,"""fragile"" item"
+Zoë Martin,"$4,975.48",2026/10/11,INV-00375,follow-up needed
+François Dupont,4988.75,10/12/2026,INV-00376,standard
+Maya Patel,"$5,002.02",2026-10-13,INV-00377,"rush, call ahead"
+"O’Connor, Riley","$5,015.29",2026/10/14,INV-00378,café delivery
+"  Nguyen, Kim  ",5028.56,10/15/2026,INV-00379,"""fragile"" item"
+Taylor Reed,"$5,041.83",2026-10-16,INV-00380,follow-up needed
+Alice Johnson,"$5,055.10",2026/10/17,INV-00381,standard
+Bob Smith,5068.37,10/18/2026,INV-00382,"rush, call ahead"
+Carol Chen,"$5,081.64",2026-10-19,INV-00383,café delivery
+José García,"$5,094.91",2026/10/20,INV-00384,"""fragile"" item"
+Zoë Martin,5108.18,10/21/2026,INV-00385,follow-up needed
+  François Dupont  ,"$5,121.45",2026-10-22,INV-00386,standard
+Maya Patel,"$5,134.72",2026/10/23,INV-00387,"rush, call ahead"
+"O’Connor, Riley",5147.99,10/24/2026,INV-00388,café delivery
+"Nguyen, Kim","$5,161.26",2026-10-25,INV-00389,"""fragile"" item"
+Taylor Reed,"$5,174.53",2026/10/26,INV-00390,follow-up needed
+Alice Johnson,5187.80,10/27/2026,INV-00391,standard
+Bob Smith,"$5,201.07",2026-10-28,INV-00392,"rush, call ahead"
+  Carol Chen  ,"$5,214.34",2026/10/01,INV-00393,café delivery
+José García,5227.61,10/02/2026,INV-00394,"""fragile"" item"
+Zoë Martin,"$5,240.88",2026-10-03,INV-00395,follow-up needed
+François Dupont,"$5,254.15",2026/10/04,INV-00396,standard
+Maya Patel,5267.42,10/05/2026,INV-00397,"rush, call ahead"
+"O’Connor, Riley","$5,280.69",2026-10-06,INV-00398,café delivery
+"Nguyen, Kim","$5,293.96",2026/10/07,INV-00399,"""fragile"" item"
+  Taylor Reed  ,5307.23,10/08/2026,INV-00400,follow-up needed
+Alice Johnson,"$5,320.50",2026-10-09,INV-00401,standard
+Bob Smith,"$5,333.77",2026/10/10,INV-00402,"rush, call ahead"
+Carol Chen,5347.04,10/11/2026,INV-00403,café delivery
+José García,"$5,360.31",2026-10-12,INV-00404,"""fragile"" item"
+Zoë Martin,"$5,373.58",2026/10/13,INV-00405,follow-up needed
+François Dupont,5386.85,10/14/2026,INV-00406,standard
+  Maya Patel  ,"$5,400.12",2026-10-15,INV-00407,"rush, call ahead"
+"O’Connor, Riley","$5,413.39",2026/10/16,INV-00408,café delivery
+"Nguyen, Kim",5426.66,10/17/2026,INV-00409,"""fragile"" item"
+Taylor Reed,"$5,439.93",2026-10-18,INV-00410,follow-up needed
+Alice Johnson,"$5,453.20",2026/10/19,INV-00411,standard
+Bob Smith,5466.47,10/20/2026,INV-00412,"rush, call ahead"
+Carol Chen,"$5,479.74",2026-10-21,INV-00413,café delivery
+  José García  ,"$5,493.01",2026/10/22,INV-00414,"""fragile"" item"
+Zoë Martin,5506.28,10/23/2026,INV-00415,follow-up needed
+François Dupont,"$5,519.55",2026-10-24,INV-00416,standard
+Maya Patel,"$5,532.82",2026/10/25,INV-00417,"rush, call ahead"
+"O’Connor, Riley",5546.09,10/26/2026,INV-00418,café delivery
+"Nguyen, Kim","$5,559.36",2026-10-27,INV-00419,"""fragile"" item"
+Taylor Reed,"$5,572.63",2026/10/28,INV-00420,follow-up needed
+  Alice Johnson  ,5585.90,10/01/2026,INV-00421,standard
+Bob Smith,"$5,599.17",2026-10-02,INV-00422,"rush, call ahead"
+Carol Chen,"$5,612.44",2026/10/03,INV-00423,café delivery
+José García,5625.71,10/04/2026,INV-00424,"""fragile"" item"
+Zoë Martin,"$5,638.98",2026-10-05,INV-00425,follow-up needed
+François Dupont,"$5,652.25",2026/10/06,INV-00426,standard
+Maya Patel,5665.52,10/07/2026,INV-00427,"rush, call ahead"
+"  O’Connor, Riley  ","$5,678.79",2026-10-08,INV-00428,café delivery
+"Nguyen, Kim","$5,692.06",2026/10/09,INV-00429,"""fragile"" item"
+Taylor Reed,5705.33,10/10/2026,INV-00430,follow-up needed
+Alice Johnson,"$5,718.60",2026-10-11,INV-00431,standard
+Bob Smith,"$5,731.87",2026/10/12,INV-00432,"rush, call ahead"
+Carol Chen,5745.14,10/13/2026,INV-00433,café delivery
+José García,"$5,758.41",2026-10-14,INV-00434,"""fragile"" item"
+  Zoë Martin  ,"$5,771.68",2026/10/15,INV-00435,follow-up needed
+François Dupont,5784.95,10/16/2026,INV-00436,standard
+Maya Patel,"$5,798.22",2026-10-17,INV-00437,"rush, call ahead"
+"O’Connor, Riley","$5,811.49",2026/10/18,INV-00438,café delivery
+"Nguyen, Kim",5824.76,10/19/2026,INV-00439,"""fragile"" item"
+Taylor Reed,"$5,838.03",2026-10-20,INV-00440,follow-up needed
+Alice Johnson,"$5,851.30",2026/10/21,INV-00441,standard
+  Bob Smith  ,5864.57,10/22/2026,INV-00442,"rush, call ahead"
+Carol Chen,"$5,877.84",2026-10-23,INV-00443,café delivery
+José García,"$5,891.11",2026/10/24,INV-00444,"""fragile"" item"
+Zoë Martin,5904.38,10/25/2026,INV-00445,follow-up needed
+François Dupont,"$5,917.65",2026-10-26,INV-00446,standard
+Maya Patel,"$5,930.92",2026/10/27,INV-00447,"rush, call ahead"
+"O’Connor, Riley",5944.19,10/28/2026,INV-00448,café delivery
+"  Nguyen, Kim  ","$5,957.46",2026-10-01,INV-00449,"""fragile"" item"
+Taylor Reed,"$5,970.73",2026/10/02,INV-00450,follow-up needed
+Alice Johnson,5984.00,10/03/2026,INV-00451,standard
+Bob Smith,"$5,997.27",2026-10-04,INV-00452,"rush, call ahead"
+Carol Chen,"$6,010.54",2026/10/05,INV-00453,café delivery
+José García,6023.81,10/06/2026,INV-00454,"""fragile"" item"
+Zoë Martin,"$6,037.08",2026-10-07,INV-00455,follow-up needed
+  François Dupont  ,"$6,050.35",2026/10/08,INV-00456,standard
+Maya Patel,6063.62,10/09/2026,INV-00457,"rush, call ahead"
+"O’Connor, Riley","$6,076.89",2026-10-10,INV-00458,café delivery
+"Nguyen, Kim","$6,090.16",2026/10/11,INV-00459,"""fragile"" item"
+Taylor Reed,6103.43,10/12/2026,INV-00460,follow-up needed
+Alice Johnson,"$6,116.70",2026-10-13,INV-00461,standard
+Bob Smith,"$6,129.97",2026/10/14,INV-00462,"rush, call ahead"
+  Carol Chen  ,6143.24,10/15/2026,INV-00463,café delivery
+José García,"$6,156.51",2026-10-16,INV-00464,"""fragile"" item"
+Zoë Martin,"$6,169.78",2026/10/17,INV-00465,follow-up needed
+François Dupont,6183.05,10/18/2026,INV-00466,standard
+Maya Patel,"$6,196.32",2026-10-19,INV-00467,"rush, call ahead"
+"O’Connor, Riley","$6,209.59",2026/10/20,INV-00468,café delivery
+"Nguyen, Kim",6222.86,10/21/2026,INV-00469,"""fragile"" item"
+  Taylor Reed  ,"$6,236.13",2026-10-22,INV-00470,follow-up needed
+Alice Johnson,"$6,249.40",2026/10/23,INV-00471,standard
+Bob Smith,6262.67,10/24/2026,INV-00472,"rush, call ahead"
+Carol Chen,"$6,275.94",2026-10-25,INV-00473,café delivery
+José García,"$6,289.21",2026/10/26,INV-00474,"""fragile"" item"
+Zoë Martin,6302.48,10/27/2026,INV-00475,follow-up needed
+  Alice Johnson  ,12.50,10/01/2026,INV-00001,standard
+"O’Connor, Riley",$238.09,2026/10/18,INV-00018,café delivery
+Zoë Martin,TBD,2026-10-07,INV-00035,follow-up needed
+Bob Smith,689.27,10/24/2026,INV-00052,"rush, call ahead"
+"Nguyen, Kim",$914.86,2026/10/13,INV-00069,"""fragile"" item"
+François Dupont,"$1,140.45",2026-10-02,INV-00086,standard
+Carol Chen,1366.04,10/19/2026,INV-00103,café delivery
+  Taylor Reed  ,"$1,591.63",2026/10/08,INV-00120,follow-up needed
+Maya Patel,"$1,817.22",2026-10-25,INV-00137,"rush, call ahead"
+José García,2042.81,10/14/2026,INV-00154,"""fragile"" item"
+Alice Johnson,"$2,268.40",2026/10/03,INV-00171,standard
+"O’Connor, Riley","$2,493.99",2026-10-20,INV-00188,café delivery
+Zoë Martin,2719.58,10/09/2026,INV-00205,follow-up needed
+Bob Smith,"$2,945.17",2026/10/26,INV-00222,null
+"  Nguyen, Kim  ","$3,170.76",2026-10-15,INV-00239,"""fragile"" item"
+François Dupont,3396.35,10/04/2026,INV-00256,standard
+Carol Chen,"$3,621.94",2026/10/21,INV-00273,N/A
+Taylor Reed,"$3,847.53",2026-10-10,INV-00290,follow-up needed
+Maya Patel,4073.12,10/27/2026,INV-00307,"rush, call ahead"
+José García,"$4,298.71",2026/10/16,INV-00324,"""fragile"" item"
+Alice Johnson,"$4,524.30",2026-10-05,INV-00341,standard
+"  O’Connor, Riley  ",4749.89,10/22/2026,INV-00358,café delivery
+Zoë Martin,"$4,975.48",2026/10/11,INV-00375,follow-up needed
+Bob Smith,"$5,201.07",2026-10-28,INV-00392,"rush, call ahead"

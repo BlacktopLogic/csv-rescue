@@ -1,0 +1,4 @@
+Customer,Amount,Date
+ Alice ,"$1,200.00",10/20/2026
+Bob,unknown,not a date
+ Carol ,$12.50,2026-10-21

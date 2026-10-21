@@ -184,8 +184,9 @@ Potential future improvements include downloadable full audit reports, stronger 
 
 ## License
 
-An open-source license is being selected and will be added to the repository before release.
+CSV Rescue is released under the [MIT License](LICENSE).
 
+Copyright © 2026 Blacktop Logic.
 ---
 
 **Blacktop Logic** — Practical software. Built to move.

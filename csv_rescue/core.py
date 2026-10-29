@@ -77,13 +77,59 @@ def clean(content: str, rules: list[dict]):
             continue
         if op == 'flag_duplicate':
             seen = {}
+
             for source_row, row in zip(source_rows, rows):
                 value = row[col].strip()
-                if value:
-                    if value in seen:
-                        flagged.append({'row': source_row, 'column': col, 'value': row[col], 'reason': 'Duplicate identifier', 'note': f'First occurrence at input row {seen[value]}'})
-                    else:
-                        seen[value] = source_row
+                if not value:
+                    continue
+
+                if value in seen:
+                    first_row, first_record = seen[value]
+
+                    reason = 'Duplicate identifier'
+                    note = f'First occurrence at input row {first_row}'
+
+                    if shopify and col == 'Variant SKU':
+                        handle = row['Handle'].strip()
+                        first_handle = first_record['Handle'].strip()
+
+                        def variant_label(record):
+                            options = [
+                                str(record.get(f'Option{i} Value') or '').strip()
+                                for i in (1, 2, 3)
+                            ]
+                            return ' / '.join(option for option in options if option) or 'Unspecified variant'
+
+                        first_variant = variant_label(first_record)
+                        current_variant = variant_label(row)
+
+                        reason = 'Duplicate Shopify variant SKU'
+
+                        if handle == first_handle:
+                            note = (
+                                f'Product handle: {handle}; '
+                                f'row {first_row}: {first_variant}; '
+                                f'row {source_row}: {current_variant}. '
+                                'Verify SKU assignments; no automatic correction.'
+                            )
+                        else:
+                            note = (
+                                f'SKU also used by product {first_handle} '
+                                f'at input row {first_row} ({first_variant}); '
+                                f'current product {handle} ({current_variant}). '
+                                'Verify whether SKU sharing is intentional.'
+                            )
+
+                    flagged.append({
+                        'row': source_row,
+                        'column': col,
+                        'value': row[col],
+                        'reason': reason,
+                        'note': note,
+                    })
+                else:
+                    seen[value] = (source_row, dict(row))
+
             continue
         if op == 'deduplicate':
             keys = rule.get('columns', columns)

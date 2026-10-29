@@ -1,5 +1,6 @@
 from collections import Counter
 from .core import read_csv
+from .currency import normalize_currency as _normalize_currency
 
 
 BLANK_MARKERS = {"n/a", "na", "null", "none", "-"}
@@ -19,7 +20,9 @@ CURRENCY_PATTERN = re.compile(
 
 
 def detect_currency(value: str) -> bool:
-    return bool(CURRENCY_PATTERN.fullmatch(value.strip()))
+    # Uses the same safe parser as cleaning, so decimal commas (24,00) count as
+    # currency and ambiguous values (1,234) do not.
+    return _normalize_currency(value).status == "ok"
 
 
 def detect_date(value: str) -> bool:

@@ -10,8 +10,20 @@ BARCODE = re.compile(r'(?:^|[ _-])(barcode|gtin|upc|ean)(?:$|[ _-])', re.I)
 REQUIRED = re.compile(r'(?:^|[ _-])(price|sku|title|handle)(?:$|[ _-])', re.I)
 
 
-def recommend(content):
+def recommend(content, shopify_mode=False):
     profile = profile_csv(content)
+    is_shopify = {
+        'Handle',
+        'Title',
+        'Variant SKU',
+        'Variant Price',
+    }.issubset(profile['columns'])
+
+    if shopify_mode and not is_shopify:
+        raise ValueError(
+            'Shopify-aware recommendations require '
+            'Handle, Title, Variant SKU, and Variant Price columns.'
+        )
     rules = []
     for col, stats in profile['columns'].items():
         values = [str(x).strip().lower() for x in stats['sample_values']]
@@ -23,18 +35,36 @@ def recommend(content):
             rules.append({'operation':'normalize_currency','column':col})
         if DATE.search(col) and stats['date_valid'] and stats['date_valid'] >= .8 * max(1, profile['total_rows'] - stats['blank_count']):
             rules.append({'operation':'normalize_date','column':col})
-        if BOOL.search(col) and values and all(v in ('yes','no','true','false','') for v in values):
-            rules.append({'operation':'normalize_boolean','column':col})
+        if BOOL.search(col) and values and all(
+            v in ('yes', 'no', 'true', 'false', '') for v in values
+        ):
+            if not shopify_mode:
+                rules.append({
+                    'operation': 'normalize_boolean',
+                    'column': col
+                })
         if IDENT.search(col):
             rules.append({'operation':'flag_duplicate','column':col})
         if BARCODE.search(col):
             rules.append({'operation':'flag_barcode','column':col})
         if REQUIRED.search(col):
-            rules.append({'operation':'flag_blank','column':col})
+            if not shopify_mode or col in (
+                'Handle',
+                'Title',
+                'Variant SKU',
+                'Variant Price',
+            ):
+                rules.append({
+                    'operation': 'flag_blank',
+                    'column': col
+                })
     if {'Handle', 'Title', 'Variant SKU'}.issubset(profile['columns']):
         rules.append({'operation':'flag_shopify_handle','column':'Handle'})
-    if profile['exact_duplicate_rows']:
-        rules.append({'operation':'deduplicate','columns':list(profile['columns'])})
+    if profile['exact_duplicate_rows'] and not shopify_mode:
+        rules.append({
+            'operation': 'deduplicate',
+            'columns': list(profile['columns'])
+        })
     return list(dict((str(r),r) for r in rules).values())
 
 

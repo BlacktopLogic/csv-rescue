@@ -72,11 +72,23 @@ def home():
     return HTML
 
 @app.post("/recommend")
-async def recommendations(file: UploadFile = File(...)):
+async def recommendations(
+    file: UploadFile = File(...),
+    shopify_mode: bool = Form(False),
+):
     try:
         content = await csv_text(file)
         columns, rows = read_csv(content)
-        return {"columns": columns, "total_rows": len(rows), "recommended_rules": recommend(content)}
+        return {
+            "columns": columns,
+            "total_rows": len(rows),
+            "shopify_detected": {
+                "Handle", "Title", "Variant SKU", "Variant Price"
+            }.issubset(columns),
+            "recommended_rules": recommend(
+                content, shopify_mode=shopify_mode
+            ),
+        }
     except (ValueError, UnicodeError) as exc:
         return JSONResponse({"error": str(exc)}, status_code=400)
 
@@ -229,7 +241,33 @@ HTML = r'''<!doctype html>
 </style></head><body>
 <h1>CSV Rescue</h1><p>Local CSV cleanup, with optional Qwen3 recommendations. Your original file is never modified.</p>
 <section class="panel"><h2>1. Choose a CSV</h2><input id="file" type="file" accept=".csv,text/csv"><p class="muted">Maximum 5 MB. Data is processed locally; analysis sends a statistical profile to your local Ollama server.</p><button id="analyze" disabled>Analyze with AI</button><button id="manual" class="secondary" disabled>Get safe recommendations</button><p id="status" role="status" aria-live="polite"></p></section>
-<section class="panel" id="review" hidden><h2>2. Review cleaning rules</h2><p>Compatible rules are recommended automatically. Review them before approving.</p><div><button type="button" class="secondary" id="select-all">Select All Recommended</button><button type="button" class="secondary" id="clear-all">Clear All</button></div><div id="rules"></div><button id="preview" disabled>Preview selected changes</button></section>
+
+<section class="panel" id="review" hidden>
+  <h2>2. Review cleaning rules</h2>
+  <p>Compatible rules are recommended automatically. Review them before approving.</p>
+
+  <label class="rule">
+    <input type="checkbox" id="shopify-mode" disabled>
+    <span>
+      <strong>Use Shopify-aware recommendations</strong>
+      <small style="display:block;opacity:.7">
+        Use conservative Shopify-specific rules for products and variants.
+        Avoid unnecessary normalization and optional-field warnings.
+      </small>
+    </span>
+  </label>
+
+  <div>
+    <button type="button" class="secondary" id="select-all">Select All Recommended</button>
+    <button type="button" class="secondary" id="clear-all">Clear All</button>
+  </div>
+
+  <div id="rules"></div>
+  <button id="preview" disabled>Preview selected changes</button>
+</section>
+
+
+</section>
 <section class="panel" id="results" hidden><h2>3. Preview results</h2><p id="summary"></p><div class="cols"><div><h3>Original (first 10 rows)</h3><div id="before" class="scroll data-preview"></div></div><div><h3>Cleaned (first 10 rows)</h3><div id="after" class="scroll data-preview"></div></div></div><div class="result-block"><h3>Automatic corrections</h3><p class="muted">Green cells in the cleaned preview have changed. Hover over a cell to read long values.</p><div id="changes" class="scroll"></div></div><div class="result-block"><h3>Warnings requiring review</h3><p class="warning-note">Warnings are not automatically fixed. Review these before using the cleaned CSV.</p><div id="flagged" class="scroll"></div></div><p class="muted">Preview shows up to 10 rows and 30 changes/issues. Download the complete change report for all changes and flagged issues.</p><button id="download">Approve & download cleaned CSV</button><button id="report" class="secondary">Download complete change report</button></section>
 <script>
 const $=id=>document.getElementById(id);let selectedFile=null,columns=[],suggestions=[],lastPreviewRules=null;
@@ -237,14 +275,58 @@ const names={normalize_boolean:'Normalize Yes/No to TRUE/FALSE',flag_blank:'Flag
 function status(s){$('status').textContent=s}
 function reset(){suggestions=[];columns=[];lastPreviewRules=null;$('review').hidden=true;$('results').hidden=true;$('rules').replaceChildren()}
 $('file').addEventListener('change',()=>{selectedFile=$('file').files[0]||null;reset();$('analyze').disabled=!selectedFile;$('manual').disabled=!selectedFile;status(selectedFile?selectedFile.name+' selected':'')});
-async function send(path,rules){const body=new FormData();body.append('file',selectedFile,selectedFile.name);if(rules!==undefined)body.append('rules',JSON.stringify(rules));const response=await fetch(path,{method:'POST',body});if(path==='/clean'||path==='/report'){if(!response.ok)throw new Error((await response.text()).replace(/<[^>]*>/g,' ').slice(0,400));return response.blob()}const result=await response.json();if(!response.ok||result.error)throw new Error(result.error||'Request failed');return result}
+
+async function send(path,rules){
+  const body=new FormData();
+  body.append('file',selectedFile,selectedFile.name);
+
+  if(path==='/recommend'){
+    body.append('shopify_mode',$('shopify-mode').checked?'true':'false');
+  }
+
+  if(rules!==undefined){
+    body.append('rules',JSON.stringify(rules));
+  }
+
+  const response=await fetch(path,{method:'POST',body});
+
+  if(path==='/clean'||path==='/report'){
+    if(!response.ok){
+      throw new Error((await response.text()).replace(/<[^>]*>/g,' ').slice(0,400));
+    }
+    return response.blob();
+  }
+
+  const result=await response.json();
+  if(!response.ok||result.error){
+    throw new Error(result.error||'Request failed');
+  }
+  return result;
+}
 function renderRules(){const box=$('rules');box.replaceChildren();suggestions.forEach((rule,i)=>{const label=document.createElement('label');label.className='rule';const check=document.createElement('input');check.type='checkbox';check.checked=true;check.dataset.index=String(i);check.addEventListener('change',()=>{$('results').hidden=true;lastPreviewRules=null});const text=document.createElement('span');text.textContent=(names[rule.operation]||rule.operation)+' — '+(rule.column||rule.columns.join(', '));label.append(check,text);box.append(label)});$('review').hidden=false;$('preview').disabled=!suggestions.length}
 function setAllRules(checked){$('rules').querySelectorAll('input[type=checkbox]').forEach(el=>{el.checked=checked});$('results').hidden=true;lastPreviewRules=null;$('preview').disabled=!checked||!suggestions.length}
 $('select-all').onclick=()=>setAllRules(true);$('clear-all').onclick=()=>setAllRules(false);
 function chosen(){return [...$('rules').querySelectorAll('input:checked')].map(el=>suggestions[Number(el.dataset.index)])}
 function table(target,rows,cols,changedKeys=null,sourceRows=null){const host=$(target);host.replaceChildren();if(!rows.length){host.textContent='No rows';return}const t=document.createElement('table'),head=document.createElement('tr');cols.forEach(c=>{const th=document.createElement('th');th.textContent=c;head.append(th)});t.append(head);rows.forEach((r,i)=>{const tr=document.createElement('tr');cols.forEach(c=>{const td=document.createElement('td');td.textContent=String(r[c]??'');td.title=String(r[c]??'');if(changedKeys&&sourceRows&&changedKeys.has(String(sourceRows[i])+'\u0000'+c)){td.classList.add('changed-cell');td.title='Changed from original: '+td.title}tr.append(td)});t.append(tr)});host.append(t)}
 $('analyze').onclick=async()=>{if(!selectedFile)return;reset();status('Analyzing with Qwen3… this may take a minute.');$('analyze').disabled=true;try{const result=await send('/analyze');columns=result.columns;suggestions=result.recommended_rules;renderRules();status(`${suggestions.length} suggested rules. ${result.rejected_rules.length} rejected.`);if(!suggestions.length)status('No safe rules suggested. You can choose manual rules.')}catch(e){status('Analysis error: '+e.message)}finally{$('analyze').disabled=false}};
-$('manual').onclick=async()=>{if(!selectedFile)return;reset();status('Analyzing columns...');$('manual').disabled=true;try{const result=await send('/recommend');columns=result.columns;suggestions=result.recommended_rules;renderRules();status(`${suggestions.length} safe rules recommended.`);if(!suggestions.length)status('No safe cleaning operations identified.')}catch(e){status('Recommendation error: '+e.message)}finally{$('manual').disabled=false}};
+$('manual').onclick=async()=>{if(!selectedFile)return;reset();status('Analyzing columns...');$('manual').disabled=true;try{const result=await send('/recommend');columns=result.columns;const checkbox=$('shopify-mode');checkbox.disabled=!result.shopify_detected;checkbox.checked=Boolean(result.shopify_detected);if(checkbox.checked){const shopifyResult=await send('/recommend');suggestions=shopifyResult.recommended_rules;}else{suggestions=result.recommended_rules;}renderRules();status(`${suggestions.length} safe rules recommended.`);if(!suggestions.length)status('No safe cleaning operations identified.')}catch(e){status('Recommendation error: '+e.message)}finally{$('manual').disabled=false}};
+$('shopify-mode').onchange=async()=>{
+  if(!selectedFile)return;
+
+  $('results').hidden=true;
+  lastPreviewRules=null;
+  status('Updating recommendations...');
+
+  try{
+    const result=await send('/recommend');
+    columns=result.columns;
+    suggestions=result.recommended_rules;
+    renderRules();
+    status(`${suggestions.length} recommendations updated.`);
+  }catch(e){
+    status('Recommendation error: '+e.message);
+  }
+};
 $('preview').onclick=async()=>{const rules=chosen();if(!rules.length){status('Select at least one rule.');return}status('Generating preview…');$('preview').disabled=true;try{const result=await send('/preview',rules);table('before',result.before,result.columns);const originalBySource=new Map(result.before.map((r,i)=>[i+2,r]));const changedKeys=new Set();result.after.forEach((r,i)=>{const src=result.output_source_rows[i],original=originalBySource.get(src);if(original)result.columns.forEach(c=>{if(String(original[c]??'')!==String(r[c]??''))changedKeys.add(String(src)+'\u0000'+c)})});table('after',result.after,result.columns,changedKeys,result.output_source_rows);table('changes',result.changes,['row','column','operation','before','after']);table('flagged',result.flagged,['row','column','value','reason','note']);$('summary').textContent=`${result.input_rows} input rows → ${result.output_rows} output rows; ${result.change_count} cell changes; ${result.flagged_count} flagged issues.`;$('results').hidden=false;lastPreviewRules=JSON.stringify(rules);status('Preview ready. Review before downloading.')}catch(e){status('Preview error: '+e.message)}finally{$('preview').disabled=false}};
 $('report').onclick=async()=>{const rules=chosen();if(JSON.stringify(rules)!==lastPreviewRules){status('Rules changed. Preview again before downloading.');return}try{const blob=await send('/report',rules);const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='change-report.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status('Downloaded complete change report.')}catch(e){status('Report error: '+e.message)}};
 $('download').onclick=async()=>{const rules=chosen();if(JSON.stringify(rules)!==lastPreviewRules){status('Rules changed. Preview again before downloading.');$('results').hidden=true;return}status('Preparing download…');try{const blob=await send('/clean',rules);const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='cleaned.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status('Downloaded cleaned.csv. Original unchanged.')}catch(e){status('Download error: '+e.message)}};

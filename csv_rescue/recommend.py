@@ -31,7 +31,7 @@ def recommend(content, shopify_mode=False):
             rules.append({'operation':'trim_whitespace','column':col})
         if stats['placeholder_count']:
             rules.append({'operation':'normalize_blank','column':col})
-        if PRICE.search(col) and stats['currency_valid'] and stats['currency_valid'] >= .8 * max(1, profile['total_rows'] - stats['blank_count']):
+        if not shopify_mode and PRICE.search(col) and stats['currency_valid'] and stats['currency_valid'] >= .8 * max(1, profile['total_rows'] - stats['blank_count']):
             rules.append({'operation':'normalize_currency','column':col})
         if DATE.search(col) and stats['date_valid'] and stats['date_valid'] >= .8 * max(1, profile['total_rows'] - stats['blank_count']):
             rules.append({'operation':'normalize_date','column':col})

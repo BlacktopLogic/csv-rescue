@@ -23,6 +23,30 @@ def read_csv(content: str):
         raise ValueError('CSV contains rows with extra fields')
     return reader.fieldnames, rows
 
+def shopify_row_type(row):
+    """Conservatively distinguish variant-bearing rows from image-only rows."""
+    variant_fields = (
+        'Variant SKU',
+        'Variant Price',
+        'Variant Barcode',
+        'Variant Grams',
+        'Variant Inventory Qty',
+        'Option1 Value',
+        'Option2 Value',
+        'Option3 Value',
+    )
+    has_variant_data = any(
+        str(row.get(field) or '').strip()
+        for field in variant_fields
+    )
+    has_image = bool(str(row.get('Image Src') or '').strip())
+
+    if has_variant_data:
+        return 'variant'
+    if has_image:
+        return 'image_only'
+    return 'unclear'
+
 
 def clean(content: str, rules: list[dict]):
     columns, original = read_csv(content)
@@ -79,13 +103,43 @@ def clean(content: str, rules: list[dict]):
         for idx, row in zip(source_rows, rows):
             before = row[col]
             after = before
+
             if op == 'flag_blank':
                 if not before.strip():
-                    # Shopify variant rows may omit Title when the same Handle has
-                    # a titled product record. Preserve the blank without warning.
-                    if shopify and col == 'Title' and row['Handle'].strip() in product_titles:
-                        continue
-                    flagged.append({'row': idx, 'column': col, 'value': before, 'reason': 'Blank required value', 'note': 'Review manually; no replacement inferred'})
+                    if shopify:
+                        row_type = shopify_row_type(row)
+
+                        # Shopify continuation rows legitimately omit the product title.
+                        if col == 'Title' and row['Handle'].strip() in product_titles:
+                            continue
+
+                        # Additional image rows do not need variant fields.
+                        if row_type == 'image_only' and col in ('Variant SKU', 'Variant Price'):
+                            continue
+
+                        # SKU is optional in Shopify, even for actual variants.
+                        if col == 'Variant SKU':
+                            continue
+
+                        # Avoid claiming a missing price is invalid when row purpose is unclear.
+                        if col == 'Variant Price' and row_type == 'unclear':
+                            flagged.append({
+                                'row': idx,
+                                'column': col,
+                                'value': before,
+                                'reason': 'Unclear Shopify row type',
+                                'note': 'Could not establish whether this row represents a variant; review manually'
+                            })
+                            continue
+
+                    flagged.append({
+                        'row': idx,
+                        'column': col,
+                        'value': before,
+                        'reason': 'Blank required value',
+                        'note': 'Review manually; no replacement inferred'
+                    })
+
             elif op == 'flag_barcode':
                 value = before.strip()
                 if re.fullmatch(r'[+-]?\d+(?:\.\d+)?[eE][+-]?\d+', value):
